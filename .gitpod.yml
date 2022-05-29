@@ -4,3 +4,13 @@ tasks:
       npm install
     command: |
       npm start
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: false
