@@ -1,8 +1,8 @@
 # .gitpod.yml
 tasks:
   - name: Install dependencies
-    before: |
-      echo `gp url` >> before.txt
+    init: |
+      echo `gp url` >> init.txt
       npm install
       gp sync-done install
     command: |
