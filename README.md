@@ -1,7 +1,5 @@
 # test-prebuild
 
-- This branch has a funky `.gitpod.yml`
-
 ```yml
 # .gitpod.yml
 tasks:
@@ -9,10 +7,21 @@ tasks:
     before: |
       echo `gp url` >> before.txt
       npm install
-  - name: In workspace
+      gp sync-done install
     command: |
-      # npm start
-      echo "Hello before-task"
+      echo `gp url` >> command.txt
+      gp sync-await install
+      npm start
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addCheck: true
+    addComment: false
+    addBadge: false
 ```
 
 touch  
