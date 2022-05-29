@@ -4,7 +4,9 @@ tasks:
     before: |
       echo `gp url` >> before.txt
       npm install
+      gp sync-done install
   - name: In workspace
     command: |
       echo `gp url` >> command.txt
+      gp sync-await install
       npm start
